@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import {
+  Grid,
+  Button,
+  TextField
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default () => {
+  const classes = makeStyles(theme => ({
+    root: {
+      width: '100%',
+      height: '100%',
+      margin: 16,
+      papdding: 0 
+    }
+  }))();
 
-export default App;
+  return <div className={classes.root}>
+    <Grid container spacing={4}>
+      <Grid item xs={3}>
+        <TextField variant='outlined' value='test' />
+      </Grid>
+      <Grid item xs={3}>
+        <TextField variant='outlined' value='test' />
+      </Grid>
+      <Grid item xs={3}>
+        <TextField variant='outlined' value='test' />
+      </Grid>
+      <Grid item xs={3}>
+        <TextField variant='outlined' value='test' />
+      </Grid>
+    </Grid>
+  </div>;
+};
+
