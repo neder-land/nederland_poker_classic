@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
 import {
+  Grid,
   Button,
-  TextField,
-  Paper,
-  Typography
+  TextField
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
@@ -14,7 +13,7 @@ import {
   mdiCardsDiamond,
   mdiCardsHeart
 } from '@mdi/js';
-import Icon from '@mdi/react';
+import Card from './Card';
 
 export default () => {
   const classes = makeStyles(theme => ({
@@ -22,34 +21,21 @@ export default () => {
       width: '100%',
       height: '100%',
       margin: 4,
-      papdding: 0 
-    },
-    cardBorder: {
-      width: 100,
-      height: 150
-    },
-    headIcon: {
-      position: 'absolute',
-      left: 20,
-      top: 40
-    },
-    headNum: {
-      position: 'absolute',
-      left: 25,
-      top: 15
+      padding: 0 
     }
   }))();
 
-  // <Icon path={mdiCardsSpade} color='#333' />
-  // <Icon path={mdiCardsClub} color='#333' />
-  // <Icon path={mdiCardsDiamond} color='#936' />
-  // <Icon path={mdiCardsHeart} color='#936' />
-
   return <div className={classes.root}>
-    <Paper className={classes.cardBorder}>
-      <Typography variant="h6" className={classes.headNum}>{'A'}</Typography>
-      <Icon path={mdiCardsSpade} color='#333' size={1} className={classes.headIcon} />
-    </Paper>
+    <Grid container>
+      {[
+        { icon: mdiCardsSpade, color: '#333' },
+        { icon: mdiCardsClub, color: '#333' },
+        { icon: mdiCardsDiamond, color: '#936' },
+        { icon: mdiCardsHeart, color: '#936' }
+      ].map(({icon, color}) => (['A', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].map(num => <Grid item md={2}>
+          <Card icon={icon} color={color} num={num} />
+        </Grid>))).reduce((arr, next) => ([...arr, next]), [])}
+    </Grid>
   </div>;
 };
 
