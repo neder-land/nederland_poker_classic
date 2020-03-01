@@ -13,14 +13,12 @@ import Icon from '@mdi/react';
 export default ({ icon, color, num }) => {
   const classes = makeStyles(theme => ({
     border: {
-      width: 60,
-      margin: 5,
+      width: 50,
       border: '1px solid #66ccff'
     },
     cardBorder: {
       width: 50,
       height: 75,
-      margin: 5,
       position: 'relative'
     },
     headIcon: {

@@ -17,7 +17,10 @@ export default () => {
     root: {
       width: '100%',
       margin: 4,
-      padding: 0
+      padding: 0,
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap'
     }
   }))();
 
