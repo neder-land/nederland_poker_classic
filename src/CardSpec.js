@@ -35,8 +35,8 @@ export default ({ icon, color, num }) => {
     },
     centerIcon: {
       position: 'absolute',
-      left: 13,
-      top: 20,
+      left: 10,
+      top: 15,
       fontSize: 20
     }
   }))();
