@@ -27,8 +27,8 @@ export default () => {
       { icon: mdiCardsDiamond, color: '#936' },
       { icon: mdiCardsHeart, color: '#936' }
     ].map(({icon, color}) => (['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].map(num => <Card icon={icon} color={color} num={num} />))).reduce((arr, next) => ([...arr, next]), [])}
-      <Card icon={mdiStar} color='#993' num='Joker' />
-      <Card icon={mdiStar} color='#333' num='Joker' />
+    {['Joker', 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'].map(num => <Card icon={mdiStar} color='#993' num={num} />)}
+    <Card icon={mdiStar} color='#333' num='Joker' />
   </div>;
 };
 
